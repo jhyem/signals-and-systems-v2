@@ -1,0 +1,11 @@
+{
+    "checkpoint": "results/baseline/best_model.pt",
+    "split": "validation",
+    "sample_count": 164,
+    "mean_noisy_snr": 9.634145567303396,
+    "mean_enhanced_snr": 13.613003967715047,
+    "mean_noisy_pesq": 1.3946715571531436,
+    "mean_enhanced_pesq": 1.7537378334417575,
+    "snr_improvement": 3.978858400411651,
+    "pesq_improvement": 0.3590662762886139
+}

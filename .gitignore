@@ -34,7 +34,21 @@ venv/
 
 # Personal experiment artifacts
 experiments/
-results/
 
 # Colab
 .colab/
+
+*.bak
+
+results/baseline/training_log.csv
+
+# Selectively track baseline evaluation results
+results/
+!results/
+results/*
+!results/baseline/
+results/baseline/*
+!results/baseline/evaluation/
+results/baseline/evaluation/*
+!results/baseline/evaluation/evaluation.csv
+!results/baseline/evaluation/summary.json
