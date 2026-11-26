@@ -33,7 +33,6 @@ venv/
 *.log
 
 # Personal experiment artifacts
-experiments/
 
 # Colab
 .colab/
