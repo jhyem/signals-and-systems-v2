@@ -1,0 +1,67 @@
+{
+  "experiment_name": "baseline_mask_cnn",
+  "seed": 42,
+  "sample_rate": 16000,
+  "audio_length_samples": 48000,
+  "n_fft": 512,
+  "hop_length": 128,
+  "window": "hann",
+  "input_feature": "log1p_magnitude",
+  "mask_range": [
+    0.0,
+    1.0
+  ],
+  "model": {
+    "type": "MaskCNN",
+    "layers": [
+      {
+        "type": "Conv1d",
+        "in_channels": 257,
+        "out_channels": 64,
+        "kernel_size": 5,
+        "padding": 2
+      },
+      {
+        "type": "ReLU"
+      },
+      {
+        "type": "Conv1d",
+        "in_channels": 64,
+        "out_channels": 64,
+        "kernel_size": 3,
+        "padding": 1
+      },
+      {
+        "type": "ReLU"
+      },
+      {
+        "type": "Conv1d",
+        "in_channels": 64,
+        "out_channels": 257,
+        "kernel_size": 1
+      },
+      {
+        "type": "Sigmoid"
+      }
+    ]
+  },
+  "training": {
+    "batch_size": 16,
+    "optimizer": "Adam",
+    "initial_lr": 0.001,
+    "max_epochs": 200,
+    "min_epochs": 30,
+    "early_stopping_patience": 20,
+    "min_delta": 0.001,
+    "lr_scheduler": "ReduceLROnPlateau",
+    "lr_scheduler_factor": 0.5,
+    "lr_scheduler_patience": 5,
+    "min_lr": 1e-05
+  },
+  "loss": "log_magnitude_l1",
+  "evaluation": {
+    "primary_metric": "PESQ-WB",
+    "secondary_metric": "SNR",
+    "validation_files": 164
+  }
+}

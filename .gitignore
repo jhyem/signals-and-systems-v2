@@ -1,0 +1,40 @@
+# Dataset
+assets/
+data/
+dataset/
+train/
+validation/
+test/
+input/
+output/
+
+# Audio files
+*.wav
+*.mp3
+*.flac
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Runtime
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environment
+.env
+venv/
+.venv/
+
+# Temporary files
+*.tmp
+*.log
+
+# Personal experiment artifacts
+experiments/
+results/
+
+# Colab
+.colab/
